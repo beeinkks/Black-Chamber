@@ -1,0 +1,26 @@
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #ffff;
+    height: 90px;
+    padding: 30px 25px;
+    justify-content: space-between;
+}
+
+.nav--logo_text {
+    margin-right: auto;
+    color: #003b29;
+    font-weight: 700;
+    font-size: 20px;
+}
+.nav--title {
+    color: #003b29;
+    font-weight: 600;
+}
+
+.nav--title > li {
+    display: inline;
+    margin-right: 1rem;
+    align-items: center;
+    color: #003b29;
+}
