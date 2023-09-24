@@ -7,8 +7,10 @@ import {
 
 import "./App.css";
 import "./Pages/Landing/landing.css"
+import "./Pages/Cryptanalysis/cryptanalysis.css"
 
 import LandingPage from "./Pages/Landing/LandingPage.jsx";
+import Cryptanalysis from "./Pages/Cryptanalysis/Cryptanalysis.jsx";
 
 function App() {
 	
@@ -17,6 +19,7 @@ function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<LandingPage />} />
+        <Route path="/cryptanalysis" element={<Cryptanalysis />} />
 			</Routes>
 		</div>
 	);

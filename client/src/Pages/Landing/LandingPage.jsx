@@ -1,6 +1,6 @@
 import React from "react";
 
-import Nav from "./NavBar.jsx";
+import Nav from "./NavBar.js";
 import "./landing.css";
 
 export default function LandingPage () {

@@ -24,3 +24,9 @@ nav {
     align-items: center;
     color: #003b29;
 }
+.nav--title > customLink {
+    display: inline;
+    margin-right: 1rem;
+    align-items: center;
+    color: #003b29;
+}
