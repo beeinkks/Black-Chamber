@@ -1,0 +1,18 @@
+.cryptBody {
+    background-color: #17301C;
+    color: #C9CBA3;
+
+    position: relative;
+    min-height: 100vh
+}
+
+.cryptBody-calc {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 2%;
+}
+
+#ciphertext {
+    resize: none;
+    height: 603px;
+}

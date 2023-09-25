@@ -7,6 +7,9 @@ export default function LandingPage () {
     return (
         <div>
             <Nav />
+            <div className="landing">
+
+            </div>
         </div>
     )
 }

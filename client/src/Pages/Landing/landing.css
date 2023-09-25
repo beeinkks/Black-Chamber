@@ -1,20 +1,39 @@
+.landing {
+    background-color: #17301C;
+    color: #C9CBA3;
+
+    position: relative;
+    min-height: 100vh
+}
+
 nav {
     display: flex;
     align-items: center;
     background-color: #ffff;
+
     height: 90px;
     padding: 30px 25px;
     justify-content: space-between;
 }
 
+a {
+    text-decoration: none;
+    color: #003b29;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #937666;
+}
+
 .nav--logo_text {
     margin-right: auto;
-    color: #003b29;
+    color: #17301C;
     font-weight: 700;
     font-size: 20px;
 }
 .nav--title {
-    color: #003b29;
+    color: #17301C;
     font-weight: 600;
 }
 
@@ -24,6 +43,18 @@ nav {
     align-items: center;
     color: #003b29;
 }
+
+.nav--title > li > a {
+    text-decoration: none;
+    color: #003b29;
+}
+
+.nav--title > li > a:hover {
+    text-decoration: underline;
+    color: #937666;
+}
+
+
 .nav--title > customLink {
     display: inline;
     margin-right: 1rem;

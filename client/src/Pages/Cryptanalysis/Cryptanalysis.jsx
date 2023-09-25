@@ -5,6 +5,7 @@ export default function Cryptanalysis() {
     const [ciphertext, setCiphertext] = useState('');
     const [freq, setFreq] = useState(Array(26).fill(0));
     const [nGrams, setNGrams] = useState([]);
+    const [ic, setIC] = useState(0);
 
     const toCaps = (text) => {
         return text.toUpperCase();
@@ -49,45 +50,74 @@ export default function Cryptanalysis() {
         setNGrams(filteredNGrams);
     };
 
-  return (
-    <div>
-      <Nav />
-      <textarea
-        id="ciphertext"
-        rows="10"
-        cols="50"
-        onChange={(e) => {
-          const newText = toCaps(e.target.value);
-          setCiphertext(newText);
-          calculateFrequency(newText);
-          calculateNGrams(newText, 3); // Change 3 to the desired N-gram length
-        }}
-        value={ciphertext}
-        placeholder="Enter your text here..."
-      ></textarea>
+    const calculateIC = (text) => {
+        text = text.replace(/\s/g, '');
 
-      <div>
-        <h2>Letter Frequencies:</h2>
-        <table>
-          <tbody>
-            {freq.map((percentage, index) => (
-              <tr key={String.fromCharCode(65 + index)}>
-                <td>{String.fromCharCode(65 + index)}</td>
-                <td>{percentage}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+        const textLength = text.length;
+        const freqArray = Array(26).fill(0);
+    
+        for (let i = 0; i < textLength; i++) {
+          const charCode = text.charCodeAt(i);
+          if (charCode >= 65 && charCode <= 90) {
+            freqArray[charCode - 65]++;
+          }
+        }
+    
+        let icValue = 0;
+        for (let i = 0; i < 26; i++) {
+          icValue += (freqArray[i] * (freqArray[i] - 1)) / (textLength * (textLength - 1));
+        }
+    
+        setIC(icValue.toFixed(4));
+    };
+    return (
+        <div className='cryptBody'>
+            <Nav />
 
-      <div>
-        <h2>N-grams:</h2>
-        <ul>
-        {nGrams.map((nGram, index) => (
-            <li key={index}>{nGram}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
+            <div className='cryptBody-calc'>
+                <textarea
+                    id="ciphertext"
+                    rows="10"
+                    cols="50"
+                    onChange={(e) => {
+                    const newText = toCaps(e.target.value);
+                    setCiphertext(newText);
+                    calculateFrequency(newText);
+                    calculateNGrams(newText, 3); // Where 3 is the desired N-gram length.
+                    calculateIC(newText);
+                    }}
+                    value={ciphertext}
+                    placeholder="Enter your text here..."
+                ></textarea>
+
+                <div>
+                    <h2>Letter Frequencies:</h2>
+                    <table>
+                    <tbody>
+                        {freq.map((percentage, index) => (
+                        <tr key={String.fromCharCode(65 + index)}>
+                            <td>{String.fromCharCode(65 + index)}</td>
+                            <td>{percentage}</td>
+                        </tr>
+                        ))}
+                    </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h2>N-grams:</h2>
+                    <ul>
+                    {nGrams.map((nGram, index) => (
+                        <li key={index}>{nGram}</li>
+                    ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Index of Coincidence (IC):</h2>
+                    <p>{ic}</p>
+                </div>
+            </div>
+        </div>
+    );
 }
