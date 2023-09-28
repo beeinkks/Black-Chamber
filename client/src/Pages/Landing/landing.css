@@ -3,7 +3,20 @@
     color: #C9CBA3;
 
     position: relative;
-    min-height: 100vh
+    min-height: 100vh;
+}
+
+.landing-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    padding: 7%;
+}
+
+.landing-img{
+    height: 25rem;
 }
 
 nav {
