@@ -1,0 +1,19 @@
+.history {
+    background-color: #17301C;
+    color: #C9CBA3;
+
+    position: relative;
+    min-height: 100vh
+}
+
+.history-body {
+    padding: 2%;
+}
+
+.history-body > h3 {
+    text-decoration: underline;
+}
+
+.history-body > p {
+    padding-left: 3%;
+}

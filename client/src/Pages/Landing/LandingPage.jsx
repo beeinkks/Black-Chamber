@@ -5,9 +5,9 @@ import "./landing.css";
 
 export default function LandingPage () {
     return (
-        <div>
+        <div className="landing">
             <Nav />
-            <div className="landing">
+            <div>
 
             </div>
         </div>

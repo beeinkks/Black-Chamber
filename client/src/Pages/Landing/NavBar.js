@@ -8,10 +8,8 @@ export default function NavBar() {
             <Link to="/"><h3>Your Own Black Chamber</h3></Link>
 
             <ul className="nav--title">
-                <li>About</li>
                 <CustomLink to="/cryptanalysis">Cyptanalysis</CustomLink>
-                <li>Encryption</li>
-                <li>History</li>
+                <CustomLink to="/history">History</CustomLink>
             </ul>
         </nav>
     )
