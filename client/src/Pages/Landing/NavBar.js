@@ -5,7 +5,7 @@ import "./landing.css";
 export default function NavBar() {
     return (
         <nav>
-            <Link to="/"><h3>Your Own Black Chamber</h3></Link>
+            <Link to="/"><h3>Your Black Chamber</h3></Link>
 
             <ul className="nav--title">
                 <CustomLink to="/cryptanalysis">Cyptanalysis</CustomLink>
